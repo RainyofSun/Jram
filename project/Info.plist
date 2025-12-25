@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>MabilisPera</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<true/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>MabilisPera needs to request camera permission to take photos of documents and scan your face to verify your true identity. </string>
+	<key>NSContactsUsageDescription</key>
+	<string>MabilisPera needs to request your contact permission to verify the authenticity of your identity, help you quickly complete the certification process, and also help you pass the loan application.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>MabilisPera needs to request location permission in order to identify your area and provide loan products and services that are more suitable for you.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>MabilisPera needs to request location permission in order to identify your area and provide loan products and services that are more suitable for you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>MabilisPera needs to request location permission in order to identify your area and provide loan products and services that are more suitable for you.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MabilisPera needs to request camera permission to identify your ID information.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>MabilisPera requires access to tracking permissions in order to ensure the security of your account and the uniqueness of your device, and to provide more accurate loan information. Your information will be transmitted encrypted and protected by a privacy policy and will not be shared with third parties.</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+</dict>
+</plist>
