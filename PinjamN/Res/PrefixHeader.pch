@@ -1,0 +1,117 @@
+//
+//  PrefixHeader.pch
+//  PinjamN
+//
+//  Created by 一刻 on 2025/12/26.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define OSLW_Notification [NSNotificationCenter defaultCenter]
+#define OSLW_Defaults [NSUserDefaults standardUserDefaults]
+
+// rgb颜色转换（16进制->10进制）
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define kStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO )
+
+#define tangguouid @"tangguouid"
+#define tangguoicon @"tangguoicon"
+//获取屏幕 宽度、高度
+#define kSCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define kSCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define StatusbarHeight [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height
+#define XBottomHeight ([UIScreen mainScreen].bounds.size.height>800? 34:0)
+#define NavBarHeight (StatusbarHeight + 44)
+#define TabBarHeight ([UIScreen mainScreen].bounds.size.height>800? 83:49)
+
+#define MainToken  [NSString stringWithFormat:@"%@_tt50024k94en",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+#define MainPhone  [NSString stringWithFormat:@"%@_phone",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+#define MainIDFA  [NSString stringWithFormat:@"%@_idfa",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+#define MainCity  [NSString stringWithFormat:@"%@_city",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+
+#define MainIndex  [NSString stringWithFormat:@"%@_check",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+#define MainGuide  [NSString stringWithFormat:@"%@_guride",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+
+#define MainLong  [NSString stringWithFormat:@"%@_long",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+#define MainLati  [NSString stringWithFormat:@"%@_lati",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+
+#define MainNotification  [NSString stringWithFormat:@"%@_notification",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+
+#define MainMainUrl  [NSString stringWithFormat:@"%@_urlkl",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+
+
+#define MainLeft  [NSString stringWithFormat:@"%@_nddell",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]]
+
+//文字、屏幕比例
+
+#define CFLFontScalVal ([UIScreen mainScreen].bounds.size.width <= 375.0f ? [UIScreen mainScreen].bounds.size.width/375.0f : 1)
+
+// 防止循环引用
+#define WEAK_SELF              __weak __typeof(self)weakSelf = self;
+#define STRONG_SELF            __strong __typeof(weakSelf)self = weakSelf;
+
+//图片
+#define OSLWImage(name)  [UIImage imageNamed:[NSString stringWithFormat:@"%@",name]]
+
+//字体
+//字体
+#define OSLWRegularFont(font) [UIFont fontWithName:@"PingFangSC-Regular" size: font]
+#define OSLWMediumFont(font) [UIFont fontWithName:@"PingFangSC-Medium" size: font]
+#define OSLWBoldFont(font) [UIFont boldSystemFontOfSize:font]
+
+#define MainGreenColor 0x00937F
+#define MainBackGroundColor 0x252c56
+#define MainCellBackGroundColor 0x303a6d
+#define MainImageBackGroundColor 0xEAEAEA
+#define MainGrayBackGroundColor 0xF6f6f6
+#define MainKey @"king"
+
+#define MainId @"1668997541"
+
+
+//tabbar字体色
+#define TabbarColor 0xbec2cc
+//导航栏颜色
+#define NavBarColor 0x283260
+//导航栏标题字体大小
+#define NavBarFont 19.0 * CFLFontScalVal
+//导航栏标题颜色
+#define NavBarTitleColor 0xd7cdff
+//线的颜色
+#define MainLineColor 0xf0f0f0
+//灰色字体颜色
+#define MainGrayTextColor 0x68728d
+//灰色字体颜色
+
+#define MainText0Color 0x000000
+#define MainText3Color 0x333333
+#define MainText6Color 0x666666
+#define MainText9Color 0x999999
+#define MainWhiteColor 0xFFFFFF
+
+#define MainRedColor 0xFF3232
+
+//绿色
+#define kGreenColor  UIColorFromRGB(0x0dd70d)
+//红色
+#define kRedColor    UIColorFromRGB(0xff0000)
+//黄色
+#define kYellowColor UIColorFromRGB(0xffff65)
+
+#import <Masonry/Masonry.h>
+#import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#import <AFNetworking/AFNetworking.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <SSKeychain/SSKeychain.h>
+#import <SDWebImage/SDWebImage.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <MJRefresh/MJRefresh.h>
+#import "CategoriesHeader.h"
+#import <MJExtension/MJExtension.h>
+
+#endif /* PrefixHeader_pch */

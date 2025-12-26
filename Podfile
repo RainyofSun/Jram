@@ -6,7 +6,7 @@ end
 
 platform :ios, '13.0'
 
-target ‘project’ do
+target ‘PinjamN’ do
 
 pod 'MJRefresh'
 pod 'AFNetworking'
@@ -17,7 +17,9 @@ pod 'SDCycleScrollView'
 pod 'MJExtension'
 pod 'IQKeyboardManager'
 pod 'YYText'
-pod 'FBSDKCoreKit','~> 17.0.0'
+pod 'FBSDKCoreKit'
+pod 'SVProgressHUD'
+pod 'SSKeychain'
 
 end
 
