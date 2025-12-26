@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)initNavigationBar;
 - (void)initNavigationBarWithTitle:(NSString *)title;
-- (void)initNaviBarWithTitle:(NSString *)title LeftImage:(UIImage*)lImage leftTitle:(NSString* )lTitle rightImage:(UIImage*)rImage rightTitle:(NSString*)rTitle delegate:(id <HUNavigationBarDelegate>)delegate;
+- (void)initNaviBarWithTitle:(NSString *)title LeOSLWImage:(UIImage*)lImage leftTitle:(NSString* )lTitle rightImage:(UIImage*)rImage rightTitle:(NSString*)rTitle delegate:(id <HUNavigationBarDelegate>)delegate;
 
 @end
 

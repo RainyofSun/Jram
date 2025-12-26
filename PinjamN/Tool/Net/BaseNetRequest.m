@@ -35,13 +35,13 @@
     NSString *currentVersion = infoDic[@"CFBundleShortVersionString"];
     [headerDic safe_setObject:currentVersion forKey:@"rotunda"];
     [headerDic safe_setObject:modelName forKey:@"capitol"];
-    [headerDic safe_setObject:[FTCommonObject getUUID] forKey:@"podium"];
+    [headerDic safe_setObject:[CommenObject getUUID] forKey:@"podium"];
     [headerDic safe_setObject:systemVersion forKey:@"hour"];
-    [headerDic safe_setObject:[FT_Defaults stringForKey:MainToken] forKey:@"intend"];
-    [headerDic safe_setObject:[FT_Defaults stringForKey:MainLeft] forKey:@"left"];
-    [headerDic safe_setObject:[FT_Defaults stringForKey:MainIDFA] forKey:@"desire"];
+    [headerDic safe_setObject:[OSLW_Defaults stringForKey:MainToken] forKey:@"intend"];
+    [headerDic safe_setObject:[OSLW_Defaults stringForKey:MainLeft] forKey:@"left"];
+    [headerDic safe_setObject:[OSLW_Defaults stringForKey:MainIDFA] forKey:@"desire"];
 
-    NSString *urlString = [([FT_Defaults stringForKey:MainMainUrl].hasTextContent ? [FT_Defaults stringForKey:MainMainUrl] : MainUrl) stringByAppendingString:serviceName];
+    NSString *urlString = [([OSLW_Defaults stringForKey:MainMainUrl].hasTextContent ? [OSLW_Defaults stringForKey:MainMainUrl] : MainUrl) stringByAppendingString:serviceName];
     if ([serviceName containsString:@"http"]) {
         urlString = serviceName;
     }
@@ -59,7 +59,7 @@
         model.msg = model.deception;
         model.success = [model.code isEqualToString:@"0"];
         if ([model.bolivia isEqualToString:@"-2"]) {
-            [FTCommonObject loginAction];
+            [CommenObject loginAction];
             return;
         }
         if (successBlock) {
@@ -90,11 +90,11 @@
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
     NSString *currentVersion = infoDic[@"CFBundleShortVersionString"];
     
-    NSString *urlString = [([FT_Defaults stringForKey:MainMainUrl].hasTextContent ? [FT_Defaults stringForKey:MainMainUrl] : MainUrl) stringByAppendingString:serviceName];
+    NSString *urlString = [([OSLW_Defaults stringForKey:MainMainUrl].hasTextContent ? [OSLW_Defaults stringForKey:MainMainUrl] : MainUrl) stringByAppendingString:serviceName];
     if ([serviceName containsString:@"http"]) {
         urlString = serviceName;
     }
-    urlString = [NSString stringWithFormat:@"%@?intend=%@&left=%@&hour=%@&capitol=%@&podium=%@&desire=%@&rotunda=%@",urlString,[FT_Defaults stringForKey:MainToken],[FT_Defaults stringForKey:MainLeft],systemVersion,modelName,[FTCommonObject getUUID],[FT_Defaults stringForKey:MainIDFA],currentVersion];
+    urlString = [NSString stringWithFormat:@"%@?intend=%@&left=%@&hour=%@&capitol=%@&podium=%@&desire=%@&rotunda=%@",urlString,[OSLW_Defaults stringForKey:MainToken],[OSLW_Defaults stringForKey:MainLeft],systemVersion,modelName,[CommenObject getUUID],[OSLW_Defaults stringForKey:MainIDFA],currentVersion];
     urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     if (parameters == nil) {
@@ -117,13 +117,13 @@
         } else {
             dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         }
-        FTResponseModel *model = [FTResponseModel parseObjectWithKeyValues:dict];
+        BaseResponseModel *model = [BaseResponseModel parseObjectWithKeyValues:dict];
         model.code = model.bolivia;
         model.data = model.interim;
         model.msg = model.deception;
         model.success = [model.code isEqualToString:@"0"];
         if ([model.bolivia isEqualToString:@"-2"]) {
-            [FTCommonObject loginAction];
+            [CommenObject loginAction];
             return;
         }
         if (successBlock) {
@@ -154,8 +154,8 @@
     NSString *modelName = [device model];
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
     NSString *currentVersion = infoDic[@"CFBundleShortVersionString"];
-    NSString *urlString = [([FT_Defaults stringForKey:MainMainUrl].hasTextContent ? [FT_Defaults stringForKey:MainMainUrl] : MainUrl) stringByAppendingString:snowsifans];
-    urlString = [NSString stringWithFormat:@"%@?intend=%@&left=%@&hour=%@&capitol=%@&podium=%@&desire=%@&rotunda=%@",urlString,[FT_Defaults stringForKey:MainToken],[FT_Defaults stringForKey:MainLeft],systemVersion,modelName,[FTCommonObject getUUID],[FT_Defaults stringForKey:MainIDFA],currentVersion];
+    NSString *urlString = [([OSLW_Defaults stringForKey:MainMainUrl].hasTextContent ? [OSLW_Defaults stringForKey:MainMainUrl] : MainUrl) stringByAppendingString:snowsifans];
+    urlString = [NSString stringWithFormat:@"%@?intend=%@&left=%@&hour=%@&capitol=%@&podium=%@&desire=%@&rotunda=%@",urlString,[OSLW_Defaults stringForKey:MainToken],[OSLW_Defaults stringForKey:MainLeft],systemVersion,modelName,[CommenObject getUUID],[OSLW_Defaults stringForKey:MainIDFA],currentVersion];
     urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     if (parameters == nil) {
@@ -163,7 +163,7 @@
     }
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parameters];
     [manager POST:urlString parameters:nil headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        NSData *imageData = [FTCommonObject compressImageToMB:image];
+        NSData *imageData = [CommenObject compressImageToMB:image];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         // 设置时间格式
         [formatter setDateFormat:@"yyyyMMddHHmmss"];
@@ -186,13 +186,13 @@
         } else {
             dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         }
-        FTResponseModel *model = [FTResponseModel parseObjectWithKeyValues:dict];
+        BaseResponseModel *model = [BaseResponseModel parseObjectWithKeyValues:dict];
         model.code = model.bolivia;
         model.data = model.interim;
         model.msg = model.deception;
         model.success = [model.code isEqualToString:@"0"];
         if ([model.bolivia isEqualToString:@"-2"]) {
-            [FTCommonObject loginAction];
+            [CommenObject loginAction];
             return;
         }
         if (successBlock) {

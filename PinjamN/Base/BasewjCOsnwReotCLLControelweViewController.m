@@ -45,20 +45,20 @@
 }
 
 #pragma mark - 自定义navibar
-- (void)initNaviBarWithTitle:(NSString *)title LeftImage:(UIImage*)lImage leftTitle:(NSString* )lTitle rightImage:(UIImage*)rImage rightTitle:(NSString*)rTitle delegate:(id <HUNavigationBarDelegate >)delegate {
+- (void)initNaviBarWithTitle:(NSString *)title LeOSLWImage:(UIImage*)lImage leftTitle:(NSString* )lTitle rightImage:(UIImage*)rImage rightTitle:(NSString*)rTitle delegate:(id <HUNavigationBarDelegate >)delegate {
     
-    _huNavigationBar = [[CbsaBasnwmanBar alloc] initNaviBarWithTitle:title LeftImage:lImage leftTitle:lTitle rightImage:rImage rightTitle:rTitle delegate:delegate frame:CGRectMake(0, 0, kSCREEN_WIDTH, NavBarHeight)];
+    _huNavigationBar = [[CbsaBasnwmanBar alloc] initNaviBarWithTitle:title LeOSLWImage:lImage leftTitle:lTitle rightImage:rImage rightTitle:rTitle delegate:delegate frame:CGRectMake(0, 0, kSCREEN_WIDTH, NavBarHeight)];
 
     [self.view addSubview:_huNavigationBar];
 
 }
 
 - (void)initNavigationBarWithTitle:(NSString *)title {
-    [self initNaviBarWithTitle:title LeftImage:nil leftTitle:nil rightImage:nil rightTitle:nil delegate:self];
+    [self initNaviBarWithTitle:title LeOSLWImage:nil leftTitle:nil rightImage:nil rightTitle:nil delegate:self];
 }
 
 - (void)initNavigationBar{
-    [self initNaviBarWithTitle:nil LeftImage:[UIImage imageNamed:@"icon_arrow_left"] leftTitle:nil rightImage:nil rightTitle:nil delegate:self];
+    [self initNaviBarWithTitle:nil LeOSLWImage:[UIImage imageNamed:@"icon_arrow_left"] leftTitle:nil rightImage:nil rightTitle:nil delegate:self];
 }
 
 - (void)setXuTitle:(NSString *)xuTitle {

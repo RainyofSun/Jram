@@ -113,5 +113,17 @@
 #import <MJRefresh/MJRefresh.h>
 #import "CategoriesHeader.h"
 #import <MJExtension/MJExtension.h>
+#import <YYText/YYText.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <AdSupport/AdSupport.h>
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+
+#import "CommenObject.h"
+#import "AppDelegate.h"
+#import "BaseTabbarViewController.h"
+#import "WebViewViewController.h"
+#import "BaseNetRequest.h"
+#import "APIHeader.h"
 
 #endif /* PrefixHeader_pch */

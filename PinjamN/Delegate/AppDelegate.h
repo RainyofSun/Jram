@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import ""
+#import "BaseTabbarViewController.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) MainTabViewController *m_mainVc;
+@property (strong, nonatomic) BaseTabbarViewController *m_mainVc;
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)locationStart;

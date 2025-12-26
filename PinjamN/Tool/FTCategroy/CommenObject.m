@@ -384,7 +384,7 @@
 +(void)pushActionWithUrlStr:(NSString *)str
 {
     if ([str containsString:@"http"]) {
-        FTWebViewVC *vc = [FTWebViewVC new];
+        WebViewViewController *vc = [WebViewViewController new];
         vc.m_urlStr = str;
         [[CommenObject currentViewController].navigationController pushViewController:vc animated:YES];
     }else if ([str containsString:@"running"]){
@@ -407,7 +407,7 @@
         FTDetailVC *vc = [FTDetailVC new];
         vc.m_productIdStr = lastArr.lastObject;
         vc.block = ^(NSString * _Nonnull str) {
-            FTWebViewVC *vc = [FTWebViewVC new];
+            WebViewViewController *vc = [WebViewViewController new];
             vc.m_urlStr = str;
             [[CommenObject currentViewController].navigationController pushViewController:vc animated:YES];
         };

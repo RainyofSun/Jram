@@ -6,12 +6,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MainTabViewController.h"
-#import "FTLoginVC.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <AdSupport/AdSupport.h>
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
-#import "FTGuideVC.h"
+#import "UserLoginViewController.h"
+#import "GuideViewController.h"
 
 @interface AppDelegate ()<CLLocationManagerDelegate>
 @property (nonatomic, strong)CLLocationManager     *s_lcManager;
@@ -31,7 +27,7 @@
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     [self initTabbarRootController];
-    [FT_Notification addObserver:self selector:@selector(locationStart) name:MainNotification object:nil];
+    [OSLW_Notification addObserver:self selector:@selector(locationStart) name:MainNotification object:nil];
     WEAK_SELF
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         STRONG_SELF
@@ -89,12 +85,12 @@
 - (void)aboutbolivia
 {
     WEAK_SELF
-    [FTNetting getWithURLServiceString:aboutbolivia parameters:nil success:^(FTResponseModel *model) {
+    [BaseNetRequest getWithURLServiceString:aboutbolivia parameters:nil success:^(BaseResponseModel *model) {
         STRONG_SELF
         if (model.success) {
             NSDictionary *dic = (NSDictionary *)model.data;
-            [FT_Defaults safe_SetObject:[dic stringForKey:@"left"] forKey:MainLeft];
-            [FT_Defaults synchronize];
+            [OSLW_Defaults safe_SetObject:[dic stringForKey:@"left"] forKey:MainLeft];
+            [OSLW_Defaults synchronize];
             NSDictionary *sonoyaDic = [dic dictionaryForKey:@"collapse"];
             FBSDKSettings.sharedSettings.appID = [sonoyaDic stringForKey:@"disinformation"];
             FBSDKSettings.sharedSettings.clientToken = [sonoyaDic stringForKey:@"descend"];
@@ -133,11 +129,11 @@
     NSString *currentVersion = infoDic[@"CFBundleShortVersionString"];
     [headerDic safe_setObject:currentVersion forKey:@"rotunda"];
     [headerDic safe_setObject:modelName forKey:@"capitol"];
-    [headerDic safe_setObject:[FTCommonObject getUUID] forKey:@"podium"];
+    [headerDic safe_setObject:[CommenObject getUUID] forKey:@"podium"];
     [headerDic safe_setObject:systemVersion forKey:@"hour"];
-    [headerDic safe_setObject:[FT_Defaults stringForKey:MainToken] forKey:@"intend"];
-    [headerDic safe_setObject:[FT_Defaults stringForKey:MainLeft] forKey:@"left"];
-    [headerDic safe_setObject:[FT_Defaults stringForKey:MainIDFA] forKey:@"desire"];
+    [headerDic safe_setObject:[OSLW_Defaults stringForKey:MainToken] forKey:@"intend"];
+    [headerDic safe_setObject:[OSLW_Defaults stringForKey:MainLeft] forKey:@"left"];
+    [headerDic safe_setObject:[OSLW_Defaults stringForKey:MainIDFA] forKey:@"desire"];
 
     NSString *urlString =snowsoliviaUrl;
     WEAK_SELF
@@ -152,9 +148,9 @@
         NSArray *arr = (NSArray *)dict;
         for (int k = 0; k < arr.count; k++) {
             NSDictionary *dic = [arr safe_objectAtIndex:k];
-            NSString *str = [FT_Defaults stringForKey:MainMainUrl];
+            NSString *str = [OSLW_Defaults stringForKey:MainMainUrl];
             if (![str isEqualToString:[dic stringForKey:@"mpera"]]) {
-                [FT_Defaults safe_SetObject:[dic stringForKey:@"mpera"] forKey:MainMainUrl];
+                [OSLW_Defaults safe_SetObject:[dic stringForKey:@"mpera"] forKey:MainMainUrl];
             }
         }
         [self aboutbolivia];
@@ -182,8 +178,8 @@
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
             STRONG_SELF
                 NSString *str = [[[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString] uppercaseString];
-                [FT_Defaults safe_SetObject:str forKey:MainIDFA];
-                [FT_Defaults synchronize];
+                [OSLW_Defaults safe_SetObject:str forKey:MainIDFA];
+                [OSLW_Defaults synchronize];
         }];
     }
     
@@ -222,10 +218,10 @@
                 [dic safe_setObject:[NSString stringWithFormat:@"%.6f",location.coordinate.longitude] forKey:@"ulysse"];
                 [dic safe_setObject:city forKey:@"apparel"];
                 [dic safe_setObject:district forKey:@"ommegang"];
-                [FTNetting postWithURLServiceString:snowscooke parameters:dic success:nil failure:nil];
-                [FT_Defaults safe_SetObject:[NSString stringWithFormat:@"%.6f",location.coordinate.latitude] forKey:MainLati];
-                [FT_Defaults safe_SetObject:[NSString stringWithFormat:@"%.6f",location.coordinate.longitude] forKey:MainLong];
-                [FT_Defaults synchronize];
+                [BaseNetRequest postWithURLServiceString:snowscooke parameters:dic success:nil failure:nil];
+                [OSLW_Defaults safe_SetObject:[NSString stringWithFormat:@"%.6f",location.coordinate.latitude] forKey:MainLati];
+                [OSLW_Defaults safe_SetObject:[NSString stringWithFormat:@"%.6f",location.coordinate.longitude] forKey:MainLong];
+                [OSLW_Defaults synchronize];
             }
         }];
         [self.s_lcManager stopUpdatingLocation];
@@ -256,7 +252,7 @@
     [alertController addAction:settingsAction];
     [alertController addAction:cancelAction];
     
-    [[FTCommonObject currentViewController] presentViewController:alertController animated:YES completion:nil];
+    [[CommenObject currentViewController] presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)openAppSettings {
@@ -268,7 +264,7 @@
 
 - (void)initTabbarRootController
 {
-    FTGuideVC *vc = [FTGuideVC new];
+    GuideViewController *vc = [GuideViewController new];
     vc.m_application = self.s_application;
     vc.m_wewwlaunchOptions = self.s_launchOptions;
     self.window.rootViewController = vc;

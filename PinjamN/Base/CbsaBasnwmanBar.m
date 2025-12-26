@@ -9,7 +9,7 @@
 
 @implementation CbsaBasnwmanBar
 
-- (instancetype)initNaviBarWithTitle:(NSString *)title LeftImage:(UIImage *)lImage leftTitle:(NSString *)lTitle rightImage:(UIImage *)rImage rightTitle:(NSString *)rTitle delegate:(id<HUNavigationBarDelegate>)delegate frame:(CGRect)frame {
+- (instancetype)initNaviBarWithTitle:(NSString *)title LeOSLWImage:(UIImage *)lImage leftTitle:(NSString *)lTitle rightImage:(UIImage *)rImage rightTitle:(NSString *)rTitle delegate:(id<HUNavigationBarDelegate>)delegate frame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = UIColorFromRGB(0x2FBEA0);
         self.delegate = delegate;

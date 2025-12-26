@@ -18,7 +18,7 @@
 typedef NS_ENUM(NSInteger, OTSUIButtonLayoutStyle) {
     OTSDefalutStyle = 0,//默认的方式
 	OTSImageLeftTitleRightStyle = 1, // image左 title右
-	OTSTitleLeftImageRightStyle = 2, // image右,title左
+	OTSTitleLeOSLWImageRightStyle = 2, // image右,title左
 	OTSImageTopTitleBottomStyle = 3, //image上，title下
 	OTSTitleTopImageBottomStyle = 4, // image下,title上
 };

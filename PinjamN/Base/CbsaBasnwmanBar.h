@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<HUNavigationBarDelegate> delegate;
 
 
-- (instancetype)initNaviBarWithTitle:(NSString *)title LeftImage:(UIImage *)lImage leftTitle:(NSString *)lTitle rightImage:(UIImage *)rImage rightTitle:(NSString *)rTitle delegate:(id<HUNavigationBarDelegate>)delegate frame:(CGRect)frame;
+- (instancetype)initNaviBarWithTitle:(NSString *)title LeOSLWImage:(UIImage *)lImage leftTitle:(NSString *)lTitle rightImage:(UIImage *)rImage rightTitle:(NSString *)rTitle delegate:(id<HUNavigationBarDelegate>)delegate frame:(CGRect)frame;
 
 @end
 
